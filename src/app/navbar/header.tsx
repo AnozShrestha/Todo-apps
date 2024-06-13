@@ -1,3 +1,4 @@
+import Button from "../../components/button";
 import Navbar from "./navbar-list";
 
 
@@ -7,8 +8,7 @@ export default function Header() {
       <header>
        
         <Navbar/>
-        <button>Login</button>
-        <button>Sign in</button>
+        <Button title="Download App"/>
       </header>
     </div>
   );

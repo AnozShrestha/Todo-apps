@@ -9,7 +9,7 @@ export default function Navbar() {
 function NavbarList() {
   const navList = [
     {
-      text: "home",
+      text: "Home",
       path: "/home",
     },
   ];
