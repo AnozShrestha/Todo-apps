@@ -13,34 +13,35 @@ const DEFAULT_TODO_LIST = [
 ];
 export default function TodoList() {
   const [todoList, setTodoList] = useState(DEFAULT_TODO_LIST);
-  const toggleCompleted =(id)=>{
-  const newTodos = todoList.map(todo=>{
-    if(todo.id===id){
-        return{
-            ...todo,
-            completed:!todo.completed
-        }
-    }
-    return todo
-  })
-setTodoList(newTodos)
+  const toggleCompleted = (id) => {
+    const newTodos = todoList.map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          completed: !todo.completed,
+        };
+      }
+      return todo;
+    });
+    setTodoList(newTodos);
+  }
+  const removeTodo=(id)=>{
+    const newTodos = todoList.filter(item=>item.id!==id)
+    setTodoList(newTodos)
+  }
 
-
-
-
-}
-    
   return (
     <ul>
-      {todoList.map((item, index) => {
+      {todoList.map((item) => {
         return (
           <TodoItem
-            key={index}
+            key={`todo-${item.id}`}
             text={item.title}
             description={item.description}
             completed={item.completed}
             id={item.id}
             toggleCompleted={toggleCompleted}
+            removeTodo={removeTodo}
           />
         );
       })}
