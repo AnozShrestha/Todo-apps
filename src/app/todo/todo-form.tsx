@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Button from "../../components/button";
-import uuid4 from "uuid4"
+import uuid4 from "uuid4";
 
 export default function TodoForm(props) {
-  const{addTodo}=props
+  const { addTodo } = props;
   const [todo, setTodo] = useState({
     title: "",
     description: "",
@@ -19,8 +19,8 @@ export default function TodoForm(props) {
     const newTodo = { ...todo, completed: false, id: uuid4() };
     addTodo(newTodo);
     setTodo({
-      title: '',
-      description: '',
+      title: "",
+      description: "",
     });
   };
   return (
