@@ -10,14 +10,16 @@
 //Code refractor
 
 
-import Todo from "./app/todo/todo";
+import Todo from "./app/todo/todo"
 
 
 
 function App() {
   return (
     
-      <Todo/>
+      
+    <Todo/>
+
       
   
 
