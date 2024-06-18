@@ -9,9 +9,8 @@
 //Debugging
 //Code refractor
 
-
 import TodoList from "./app/todo/todo-list";
-import Button from "../src/components/button";
+import { Button } from "../src/components/ui/button";
 import Search from "../src/components/search";
 import Counter from "../src/app/counter";
 import ToggleLight from "./app/toggle-light";
@@ -22,16 +21,14 @@ function App() {
   const buttonTitle = "Click me";
   return (
     <div className="text-red-900 bg-green-300">
-      <Search/>
+      <Search />
       <h1>{title}</h1>
       <p>{description}</p>
       <button>{buttonTitle}</button>
-      <TodoList/>
-      <Button title="Click me"/>
-      <Counter/>
-      <ToggleLight/>
-
-       
+      <TodoList />
+      <Button>Click me</Button>
+      <Counter />
+      <ToggleLight />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../../components/button";
+import { Button } from "../../components/ui/button";
 import uuid4 from "uuid4";
 
 export default function TodoForm(props) {
@@ -47,7 +47,7 @@ export default function TodoForm(props) {
           onChange={handleChange}
         />
       </div>
-      <Button title="Add" />
+      <Button>Add</Button>
     </form>
   );
 }
