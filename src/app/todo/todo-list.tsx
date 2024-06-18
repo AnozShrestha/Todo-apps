@@ -1,14 +1,15 @@
-
 import TodoItem from "./todo-item";
 
-
 export default function TodoList(props) {
-const{todoList,toggleCompleted,removeTodo}=props
+  const { todoList, toggleCompleted, removeTodo } = props;
+  if (todoList.length <= 0) {
+    return <h1>No Todo item Found </h1>;
+  }
 
   return (
     <ul>
       {todoList.map((item) => {
-        const {id,title,description,completed} = item
+        const { id, title, description, completed } = item;
         return (
           <TodoItem
             key={`todo-${id}`}
