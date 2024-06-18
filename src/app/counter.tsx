@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../components/button";
+import { Button } from "../components/ui/button";
 //state
 //mutable
 //synchronous
@@ -16,8 +16,8 @@ export default function Counter() {
   return (
     <div>
       <h1>{count}</h1>
-      <Button title="Subtract" onClick={handleSubtract} />
-      <Button title="Add" onClick={handleAdd} />
+      <Button onClick={handleSubtract}>Subtract</Button>
+      <Button onClick={handleAdd}>Add</Button>
     </div>
   );
 }
