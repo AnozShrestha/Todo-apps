@@ -1,6 +1,17 @@
 import { useState } from "react";
 import { Button } from "../../components/ui/button";
 import uuid4 from "uuid4";
+import { Input } from "@/components/ui/input";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 export default function TodoForm(props) {
   const { addTodo } = props;
@@ -24,30 +35,38 @@ export default function TodoForm(props) {
     });
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="title">Title</label>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          id="title"
-          className="border"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="description">Description</label>
-        <input
-          type="text"
-          name="description"
-          value={description}
-          id="description"
-          className="border"
-          onChange={handleChange}
-        />
-      </div>
-      <Button>Add</Button>
-    </form>
+    <AlertDialog>
+      <AlertDialogTrigger asChild>
+        <Button variant="outline">Add Todo</Button>
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Add Todo</AlertDialogTitle>
+        </AlertDialogHeader>
+        <form onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            name="title"
+            value={title}
+            id="title"
+            onChange={handleChange}
+            label="Title"
+          />
+
+          <Input
+            type="text"
+            name="description"
+            value={description}
+            id="description"
+            label="Description"
+            onChange={handleChange}
+          />
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction type="submit">Continue</AlertDialogAction>
+          </AlertDialogFooter>
+        </form>
+      </AlertDialogContent>
+    </AlertDialog>
   );
 }
