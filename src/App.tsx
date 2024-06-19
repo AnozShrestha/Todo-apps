@@ -9,20 +9,32 @@
 //Debugging
 //Code refractor
 
+import Counter from "./app/counter";
+import Profile from "./app/profile";
+import Todo from "./app/todo/todo";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ToggleLight from "./app/toggle-light";
 
-import Todo from "./app/todo/todo"
-
-
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Todo />,
+  },
+  {
+    path: "/counter",
+    element: <Counter />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
+  },
+  {
+    path: "/toggle-light",
+    element: <ToggleLight />,
+  },
+]);
 
 function App() {
-  return (
-    
-      
-    <Todo/>
-
-      
-  
-
-  );
+  return <RouterProvider router={router} />;
 }
 export default App;

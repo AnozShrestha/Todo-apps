@@ -3,12 +3,14 @@
 //uncontrolled based
 //controlled based
 
+import { Input } from "./ui/input";
+
 export default function Search(props) {
   const { search, handleChange } = props;
 
   return (
     <div>
-      <input
+      <Input
         type="text"
         className="border rounded py-2 px-3"
         value={search}
